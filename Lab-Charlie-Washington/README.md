@@ -1,16 +1,9 @@
-# lab-charlie-noahc
-[Link to live app on Heroku](https://lab-charlie-noahc.herokuapp.com/)
+# Lab-Charlie
+[Link to Heroku]()
 
-## About how Angular is used in this app
-When the user navigates to the main page, "and hi there, tom tom" is one of the things displayed. "tom tom" is part of an object that comes from the `user.json` file, which can be seen on the [/user page](https://lab-charlie-noahc.herokuapp.com/user). `index.js` maps to that file with this bit of code:
-```javascript
-app.get('/user', function (req, res) {
+## Angular
 
-    res.sendFile('/user.json', { root: __dirname });
-
-});
-```
-The main page, `angular.html`, creates a controller to get the data with this javascript code:
+`angular.html`, creates a controller to get the data using this code:
 ```javascript
 app.controller('MainController', function ($scope, $http) {
             $scope.user = null;
@@ -25,5 +18,6 @@ app.controller('MainController', function ($scope, $http) {
         });
 ```
 
-and then displays the 'name' with ```<h3 id="user-greeting">and hi there, {{ user.name }}</h3>```.
-An input box is created with the line ```<input ng-model="user.name">``` and updates the 'name' live on the page without a refresh of the page. However, the data is not updated and saved in `user.json`, so anything new put in the box is gone when the page is refreshed.
+Then proceeds on to ```<h3 id="user-greeting">and hi there, {{ user.name }}</h3>```.
+
+An input box is created with the line ```<input ng-model="user.name">``` and updates the 'name' live. While the page is updated live, the actual `user.json` file doesn't change so anything that is changed on the page isn't permanent.
