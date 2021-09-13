@@ -6,7 +6,7 @@ const { listenerCount } = require('process');
 
 app.get('/', function (req, res) {
 
-    //res.send('<h3>Hello Node on Heroku</h3>');
+
     res.sendFile('/angular.html', { root: __dirname });
 
 
@@ -41,7 +41,6 @@ app.get('/file', function (req, res) {
 
 });
 
-//app.listen(process.env.PORT || 3000);
 
 app.listen(process.env.PORT || 8888, function () {
     console.log('Listening on port 8888');
